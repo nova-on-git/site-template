@@ -6,6 +6,7 @@ export default defineNuxtConfig({
             "github:Veloris-Designs/veloris-dashboard#production",
             { auth: process.env.GITHUB_TOKEN, install: true },
         ],
+        // "../veloris-dashboard",
         "github:Veloris-Designs/nova#v1.1.8",
     ],
 

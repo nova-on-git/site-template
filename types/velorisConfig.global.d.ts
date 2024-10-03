@@ -32,9 +32,21 @@ declare global {
     }
 
     interface VelorisConfig {
+        sectionSwitches: {
+            base: boolean
+            store: boolean
+            blogs: boolean
+            blogs: boolean
+            settings: boolean
+            galleries: boolean
+            dev: boolean
+            newsletter: boolean
+            customerSupport: boolean
+        }
+
         itemFormStruct: ProductFormStructure
         sections: {
-            base: Section
+            base?: Section
             store?: Section
             blogs?: Section
             settings?: Section
@@ -60,7 +72,6 @@ declare global {
     }
 
     interface Section {
-        switch: boolean
         order: number
         pages: Page[]
         settings?: {
