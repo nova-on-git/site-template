@@ -3,7 +3,7 @@
 ### Firebase Connection
 
 1. Set up a firebase project, then copy the project connection into the .env
-2. Initialize, firestore, firebase auth, firebase storage and hosting in the firebase $Dashboard. (this can also be done by running: firebase init in the cli)
+2. Initialize, firestore, firebase auth, firebase storage and hosting in the firebase dashboard. (this can also be done by running: firebase init in the cli)
 
 ### ANALYTICS
 
