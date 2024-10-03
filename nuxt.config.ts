@@ -1,7 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     // extends: ["../nova/"],
-    extends: ["../veloris-dashboard", "github:Veloris-Designs/nova#v1.1.8"],
+    extends: [
+        [
+            "github:Veloris-Designs/veloris-dashboard#production",
+            { auth: process.env.GITHUB_TOKEN, install: true },
+        ],
+        "github:Veloris-Designs/nova#v1.1.8",
+    ],
 
     postcss: { plugins: { tailwindcss: {}, autoprefixer: {} } },
 
