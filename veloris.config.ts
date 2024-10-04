@@ -1,13 +1,13 @@
 export default {
     sectionSwitches: {
         base: true,
-        store: false,
+        store: true,
         blogs: true,
         settings: true,
         galleries: true,
         dev: true,
         newsletter: true,
-        customerSupport: false,
+        customerSupport: true,
     },
 
     // Define store item data structure //

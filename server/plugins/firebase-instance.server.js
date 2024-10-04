@@ -15,16 +15,32 @@ export default defineNitroPlugin(async (nitroApp) => {
         projectId: config.public.FIREBASE_PROJECT_ID,
     }
 
+    /** This is for the Veloris global authentication. Where all users of the cms sign in to the same auth db. */
+    const velorisFirebaseConfig = {
+        apiKey: "AIzaSyBAbJjwIWx1DDYbQaV8e6vTWQG5JQMqUYk",
+        authDomain: "veloris-91865.firebaseapp.com",
+        projectId: "veloris-91865",
+        storageBucket: "veloris-91865.appspot.com",
+        messagingSenderId: "849032631896",
+        appId: "1:849032631896:web:ea11e7e0769e7f5de05c2d",
+        measurementId: "G-EZV53X4G0C",
+    }
+
     if (!firebaseConfig.apiKey) {
         console.error("Firebase connection details are missing. Please add them to the .env file.")
     }
 
-    let app, auth, db, storage
+    let app, velorisApp, auth, velorisAuth, db, velorisDb, storage
 
     try {
         app = initializeApp(firebaseConfig)
+        velorisApp = initializeApp(velorisFirebaseConfig, "velorisApp")
+
         auth = getAuth(app)
+
         db = getFirestore(app)
+        velorisDb = getFirestore(velorisApp)
+
         storage = getStorage(app)
 
         console.log("Firebase server initialized.")
@@ -33,9 +49,10 @@ export default defineNitroPlugin(async (nitroApp) => {
     }
 
     nitroApp.hooks.hook("request", (event) => {
-        event.context.app = app
-        event.context.auth = auth
+        // event.context.app = app
+        // event.context.auth = auth
         event.context.db = db
+        event.context.velorisDb = velorisDb
         event.context.storage = storage
     })
 })

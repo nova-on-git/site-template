@@ -60,13 +60,6 @@ export default {
                     name: "your store front",
                     url: "/admin/store",
                     icon: "material-symbols:storefront-outline",
-
-                    subpages: [
-                        {
-                            name: "Add Item",
-                            url: "/admin/store/products/add-item",
-                        },
-                    ],
                 },
 
                 {
