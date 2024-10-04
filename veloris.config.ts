@@ -1,7 +1,7 @@
 export default {
     sectionSwitches: {
         base: true,
-        store: true,
+        store: false,
         blogs: true,
         settings: true,
         galleries: true,
