@@ -1,3 +1,4 @@
+// TODO: This file will add unused files to .nuxtignore file. Preventing them from being included in the build.
 import fs from "fs"
 
 const nuxtIgnorePath = "../nuxtignore"
