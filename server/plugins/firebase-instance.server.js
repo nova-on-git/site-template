@@ -30,17 +30,16 @@ export default defineNitroPlugin(async (nitroApp) => {
         console.error("Firebase connection details are missing. Please add them to the .env file.")
     }
 
-    let app, velorisApp, auth, velorisAuth, db, velorisDb, storage
+    let app, velorisApp, auth, db, velorisDb, storage
 
     try {
         app = initializeApp(firebaseConfig)
         velorisApp = initializeApp(velorisFirebaseConfig, "velorisApp")
 
-        auth = getAuth(app)
-
-        db = getFirestore(app)
+        auth = getAuth(velorisApp)
         velorisDb = getFirestore(velorisApp)
-
+        
+        db = getFirestore(app)
         storage = getStorage(app)
 
         console.log("Firebase server initialized.")
@@ -49,8 +48,6 @@ export default defineNitroPlugin(async (nitroApp) => {
     }
 
     nitroApp.hooks.hook("request", (event) => {
-        // event.context.app = app
-        // event.context.auth = auth
         event.context.db = db
         event.context.velorisDb = velorisDb
         event.context.storage = storage

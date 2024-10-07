@@ -31,6 +31,7 @@ declare global {
         [key: string]: InlineField
     }
 
+
     interface VelorisConfig {
         sectionSwitches: {
             base: boolean
@@ -45,7 +46,7 @@ declare global {
         }
 
         itemFormStruct: ProductFormStructure
-        sections: {
+        sections?: {
             base?: Section
             store?: Section
             blogs?: Section
