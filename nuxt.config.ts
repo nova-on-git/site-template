@@ -3,6 +3,7 @@ export default defineNuxtConfig({
     // extends: ["../nova/"],
     extends: [
         [
+            
             "github:Veloris-Designs/veloris-dashboard#prod",
             { auth: process.env.GITHUB_TOKEN, install: true },
         ],
