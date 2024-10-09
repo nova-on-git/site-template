@@ -2,14 +2,14 @@
 export default defineNuxtConfig({
     // extends: ["../nova/"],
     extends: [
-        [
-            
-            "github:Veloris-Designs/veloris-dashboard#prod",
-            { auth: process.env.GITHUB_TOKEN, install: true },
-        ],
+        // [
+        //     "github:Veloris-Designs/veloris-dashboard#prod",
+        //     { auth: process.env.GITHUB_TOKEN, install: true },
+        // ],
+
         ["github:Veloris-Designs/nova#v1.1.8", { install: true }],
 
-        // ["../veloris-dashboard", { install: true }], // used for dev
+        ["../veloris-dashboard", { install: true }], // used for dev
     ],
 
 
@@ -19,6 +19,7 @@ export default defineNuxtConfig({
     app: { pageTransition: { name: "page" } },
 
     modules: ["@nuxt/fonts", "@pinia/nuxt", "nuxt-build-cache"],
+
     runtimeConfig: {
         STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
         STRIPE_PUBLISHABLE_KEY: process.env.STRIPE_SECRET_KEY,
