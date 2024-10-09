@@ -1,12 +1,12 @@
 export default {
     sectionSwitches: {
         base: true,
-        store: true,
+        store: false,
         blogs: true,
         settings: true,
-        galleries: true,
+        galleries: false,
         dev: true,
-        newsletter: true,
+        newsletter: false,
         customerSupport: true,
     },
 
