@@ -1,15 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    // extends: ["../nova/"],
+    // extends: ,
     extends: [
-        // [
-        //     "github:Veloris-Designs/veloris-dashboard#prod",
-        //     { auth: process.env.GITHUB_TOKEN, install: true },
-        // ],
+        [
+            "github:Veloris-Designs/veloris-dashboard#prod",
+            { auth: process.env.GITHUB_TOKEN, install: true },
+        ],
 
-        ["github:Veloris-Designs/nova#v1.1.8", { install: true }],
-
-        ["../veloris-dashboard", { install: true }], // used for dev
+        ["github:Veloris-Designs/nova#v1.1.9", { install: true }],
+        
+        // ["../nova/"],
+        // ["../veloris-dashboard", { install: true }], // used for dev
     ],
 
 

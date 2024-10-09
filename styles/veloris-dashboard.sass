@@ -1,5 +1,8 @@
 $admin-background: #eeeeee
 $admin-content-width: 1200px
+$dashboard-topbar-height: 60px
+$dashboard-content-height: calc(100vh - $dashboard-topbar-height)
+
 
 .admin-container
     gap: 25px
@@ -28,14 +31,13 @@ $admin-content-width: 1200px
     margin-bottom: 10px
 
 .admin-page
-    min-height: calc( 100vh - 60px )
-    max-height: calc( 100vh - 60px )
+    flex-grow: 1
+    height: $dashboard-content-height
     overflow-y: auto
     overflow-x: hidden
     background: $admin-background
 
 .admin-mpage
-
     overflow: hidden
     max-width: $admin-content-width
     padding-inline: 25px !important
