@@ -2,15 +2,15 @@
 export default defineNuxtConfig({
     // extends: ,
     extends: [
-        // [
-        //     "github:Veloris-Designs/veloris-dashboard#prod",
-        //     { auth: process.env.GITHUB_TOKEN, install: true },
-        // ],
+        [
+            "github:Veloris-Designs/veloris-dashboard#prod",
+            { auth: process.env.GITHUB_TOKEN, install: true },
+        ],
 
         ["github:Veloris-Designs/nova#v1.1.9", { install: true }],
         
         // ["../nova/"],
-        ["../veloris-dashboard", { install: true }], // used for dev
+        // ["../veloris-dashboard", { install: true }], // used for dev
     ],
 
     postcss: { plugins: { tailwindcss: {}, autoprefixer: {} } },
