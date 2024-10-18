@@ -1,7 +1,7 @@
 {
-  "_hash": "DlQWwy3geg",
+  "_hash": "oFpbipLqJL",
   "project": {
-    "rootDir": "/home/cody/git/veloris-site-template"
+    "rootDir": "/app/site"
   },
   "versions": {
     "nuxt": "3.13.2"

@@ -7,7 +7,7 @@ export default defineNuxtConfig({
         ["github:Veloris-Designs/nova#v1.1.9", { install: true }],
 
         // ["../nova/"],
-        ["../veloris-dashboard", { install: true }], // used for dev
+        ["../dashboard", { install: true }], // used for dev
     ],
 
     postcss: { plugins: { tailwindcss: {}, autoprefixer: {} } },

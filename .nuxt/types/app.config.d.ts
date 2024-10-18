@@ -2,8 +2,8 @@
 import type { CustomAppConfig } from 'nuxt/schema'
 import type { Defu } from 'defu'
 import cfg0 from "../../node_modules/.c12/github_Veloris_Designs_aph2YalU4I/app.config"
-import cfg1 from "../../../veloris-dashboard/app.config"
-import cfg2 from "../../../veloris-dashboard/node_modules/.c12/github_Veloris_Designs_aph2YalU4I/app.config"
+import cfg1 from "../../../dashboard/app.config"
+import cfg2 from "../../../dashboard/node_modules/.c12/github_Veloris_Designs_aph2YalU4I/app.config"
 
 declare const inlineConfig = {
   "nuxt": {}

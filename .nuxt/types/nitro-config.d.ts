@@ -4,8 +4,8 @@
 import type { Defu } from 'defu'
 
 import type { default as appConfig0 } from "../../node_modules/.c12/github_Veloris_Designs_aph2YalU4I/app.config";
-import type { default as appConfig1 } from "../../../veloris-dashboard/app.config";
-import type { default as appConfig2 } from "../../../veloris-dashboard/node_modules/.c12/github_Veloris_Designs_aph2YalU4I/app.config";
+import type { default as appConfig1 } from "../../../dashboard/app.config";
+import type { default as appConfig2 } from "../../../dashboard/node_modules/.c12/github_Veloris_Designs_aph2YalU4I/app.config";
 
 type UserAppConfig = Defu<{}, [typeof appConfig0, typeof appConfig1, typeof appConfig2]>
 

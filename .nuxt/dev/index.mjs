@@ -3,40 +3,40 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { mkdirSync } from 'node:fs';
 import { parentPort, threadId } from 'node:worker_threads';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, isEvent, createEvent, fetchWithEvent, getRequestHeader, eventHandler, setHeaders, sendRedirect, proxyRequest, createError, setResponseHeader, send, getResponseStatus, setResponseStatus, setResponseHeaders, getRequestHeaders, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getRouterParam, getQuery as getQuery$1, readBody, readRawBody, getResponseStatusText } from 'file:///home/cody/git/veloris-site-template/node_modules/.pnpm/h3@1.13.0/node_modules/h3/dist/index.mjs';
-import { BetaAnalyticsDataClient } from 'file:///home/cody/git/veloris-dashboard/node_modules/.pnpm/@google-analytics+data@4.8.0/node_modules/@google-analytics/data/build/src/index.js';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, isEvent, createEvent, fetchWithEvent, getRequestHeader, eventHandler, setHeaders, sendRedirect, proxyRequest, createError, setResponseHeader, send, getResponseStatus, setResponseStatus, setResponseHeaders, getRequestHeaders, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getRouterParam, getQuery as getQuery$1, readBody, readRawBody, getResponseStatusText } from 'file:///app/site/node_modules/.pnpm/h3@1.13.0/node_modules/h3/dist/index.mjs';
+import { BetaAnalyticsDataClient } from 'file:///app/dashboard/node_modules/.pnpm/@google-analytics+data@4.8.0/node_modules/@google-analytics/data/build/src/index.js';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { getFirestore, collection, doc, deleteDoc, getDocs, updateDoc, addDoc, getDoc, query, orderBy, where, setDoc } from 'file:///home/cody/git/veloris-dashboard/node_modules/.pnpm/firebase@10.14.0/node_modules/firebase/firestore/dist/index.mjs';
-import axios from 'file:///home/cody/git/veloris-dashboard/node_modules/.pnpm/axios@1.7.7/node_modules/axios/index.js';
+import { getFirestore, collection, doc, deleteDoc, getDocs, updateDoc, addDoc, getDoc, query, orderBy, where, setDoc } from 'file:///app/dashboard/node_modules/.pnpm/firebase@10.14.0/node_modules/firebase/firestore/dist/index.mjs';
+import axios from 'file:///app/dashboard/node_modules/.pnpm/axios@1.7.7/node_modules/axios/index.js';
 import { promises } from 'fs';
-import Stripe from 'file:///home/cody/git/veloris-dashboard/node_modules/.pnpm/stripe@16.12.0/node_modules/stripe/esm/stripe.esm.node.js';
-import { getRequestDependencies, getPreloadLinks, getPrefetchLinks, createRenderer } from 'file:///home/cody/git/veloris-site-template/node_modules/.pnpm/vue-bundle-renderer@2.1.1/node_modules/vue-bundle-renderer/dist/runtime.mjs';
-import { stringify, uneval } from 'file:///home/cody/git/veloris-site-template/node_modules/.pnpm/devalue@5.1.1/node_modules/devalue/index.js';
-import destr from 'file:///home/cody/git/veloris-site-template/node_modules/.pnpm/destr@2.0.3/node_modules/destr/dist/index.mjs';
-import { parseURL, withoutBase, joinURL, getQuery, withQuery, withTrailingSlash, joinRelativeURL } from 'file:///home/cody/git/veloris-site-template/node_modules/.pnpm/ufo@1.5.4/node_modules/ufo/dist/index.mjs';
-import { renderToString } from 'file:///home/cody/git/veloris-site-template/node_modules/.pnpm/vue@3.5.11_typescript@5.6.3/node_modules/vue/server-renderer/index.mjs';
-import { propsToString, renderSSRHead } from 'file:///home/cody/git/veloris-site-template/node_modules/.pnpm/@unhead+ssr@1.11.7/node_modules/@unhead/ssr/dist/index.mjs';
-import { createFetch as createFetch$1, Headers as Headers$1 } from 'file:///home/cody/git/veloris-site-template/node_modules/.pnpm/ofetch@1.4.1/node_modules/ofetch/dist/node.mjs';
-import { createCall, createFetch } from 'file:///home/cody/git/veloris-site-template/node_modules/.pnpm/unenv@1.10.0/node_modules/unenv/runtime/fetch/index.mjs';
-import { createHooks } from 'file:///home/cody/git/veloris-site-template/node_modules/.pnpm/hookable@5.5.3/node_modules/hookable/dist/index.mjs';
-import { klona } from 'file:///home/cody/git/veloris-site-template/node_modules/.pnpm/klona@2.0.6/node_modules/klona/dist/index.mjs';
-import { snakeCase } from 'file:///home/cody/git/veloris-site-template/node_modules/.pnpm/scule@1.3.0/node_modules/scule/dist/index.mjs';
-import defu, { defuFn } from 'file:///home/cody/git/veloris-site-template/node_modules/.pnpm/defu@6.1.4/node_modules/defu/dist/defu.mjs';
-import { hash } from 'file:///home/cody/git/veloris-site-template/node_modules/.pnpm/ohash@1.1.4/node_modules/ohash/dist/index.mjs';
-import { createStorage, prefixStorage } from 'file:///home/cody/git/veloris-site-template/node_modules/.pnpm/unstorage@1.12.0_ioredis@5.4.1/node_modules/unstorage/dist/index.mjs';
-import unstorage_47drivers_47fs from 'file:///home/cody/git/veloris-site-template/node_modules/.pnpm/unstorage@1.12.0_ioredis@5.4.1/node_modules/unstorage/drivers/fs.mjs';
-import { toRouteMatcher, createRouter } from 'file:///home/cody/git/veloris-site-template/node_modules/.pnpm/radix3@1.1.2/node_modules/radix3/dist/index.mjs';
+import Stripe from 'file:///app/dashboard/node_modules/.pnpm/stripe@16.12.0/node_modules/stripe/esm/stripe.esm.node.js';
+import { getRequestDependencies, getPreloadLinks, getPrefetchLinks, createRenderer } from 'file:///app/site/node_modules/.pnpm/vue-bundle-renderer@2.1.1/node_modules/vue-bundle-renderer/dist/runtime.mjs';
+import { stringify, uneval } from 'file:///app/site/node_modules/.pnpm/devalue@5.1.1/node_modules/devalue/index.js';
+import destr from 'file:///app/site/node_modules/.pnpm/destr@2.0.3/node_modules/destr/dist/index.mjs';
+import { parseURL, withoutBase, joinURL, getQuery, withQuery, withTrailingSlash, joinRelativeURL } from 'file:///app/site/node_modules/.pnpm/ufo@1.5.4/node_modules/ufo/dist/index.mjs';
+import { renderToString } from 'file:///app/site/node_modules/.pnpm/vue@3.5.12_typescript@5.6.3/node_modules/vue/server-renderer/index.mjs';
+import { propsToString, renderSSRHead } from 'file:///app/site/node_modules/.pnpm/@unhead+ssr@1.11.10/node_modules/@unhead/ssr/dist/index.mjs';
+import { createFetch as createFetch$1, Headers as Headers$1 } from 'file:///app/site/node_modules/.pnpm/ofetch@1.4.1/node_modules/ofetch/dist/node.mjs';
+import { createCall, createFetch } from 'file:///app/site/node_modules/.pnpm/unenv@1.10.0/node_modules/unenv/runtime/fetch/index.mjs';
+import { createHooks } from 'file:///app/site/node_modules/.pnpm/hookable@5.5.3/node_modules/hookable/dist/index.mjs';
+import { klona } from 'file:///app/site/node_modules/.pnpm/klona@2.0.6/node_modules/klona/dist/index.mjs';
+import { snakeCase } from 'file:///app/site/node_modules/.pnpm/scule@1.3.0/node_modules/scule/dist/index.mjs';
+import defu, { defuFn } from 'file:///app/site/node_modules/.pnpm/defu@6.1.4/node_modules/defu/dist/defu.mjs';
+import { hash } from 'file:///app/site/node_modules/.pnpm/ohash@1.1.4/node_modules/ohash/dist/index.mjs';
+import { createStorage, prefixStorage } from 'file:///app/site/node_modules/.pnpm/unstorage@1.12.0_ioredis@5.4.1/node_modules/unstorage/dist/index.mjs';
+import unstorage_47drivers_47fs from 'file:///app/site/node_modules/.pnpm/unstorage@1.12.0_ioredis@5.4.1/node_modules/unstorage/drivers/fs.mjs';
+import { toRouteMatcher, createRouter } from 'file:///app/site/node_modules/.pnpm/radix3@1.1.2/node_modules/radix3/dist/index.mjs';
 import { AsyncLocalStorage } from 'node:async_hooks';
-import { consola } from 'file:///home/cody/git/veloris-site-template/node_modules/.pnpm/consola@3.2.3/node_modules/consola/dist/index.mjs';
-import { getContext } from 'file:///home/cody/git/veloris-site-template/node_modules/.pnpm/unctx@2.3.1_webpack-sources@3.2.3/node_modules/unctx/dist/index.mjs';
-import { captureRawStackTrace, parseRawStackTrace } from 'file:///home/cody/git/veloris-site-template/node_modules/.pnpm/errx@0.1.0/node_modules/errx/dist/index.js';
-import { isVNode, version, unref } from 'file:///home/cody/git/veloris-site-template/node_modules/.pnpm/vue@3.5.11_typescript@5.6.3/node_modules/vue/index.mjs';
-import { initializeApp } from 'file:///home/cody/git/veloris-dashboard/node_modules/.pnpm/firebase@10.14.0/node_modules/firebase/app/dist/index.mjs';
-import { getAuth } from 'file:///home/cody/git/veloris-dashboard/node_modules/.pnpm/firebase@10.14.0/node_modules/firebase/auth/dist/index.mjs';
-import { getStorage } from 'file:///home/cody/git/veloris-dashboard/node_modules/.pnpm/firebase@10.14.0/node_modules/firebase/storage/dist/index.mjs';
-import { createServerHead as createServerHead$1, CapoPlugin } from 'file:///home/cody/git/veloris-site-template/node_modules/.pnpm/unhead@1.11.7/node_modules/unhead/dist/index.mjs';
-import { defineHeadPlugin } from 'file:///home/cody/git/veloris-site-template/node_modules/.pnpm/@unhead+shared@1.11.7/node_modules/@unhead/shared/dist/index.mjs';
+import { consola } from 'file:///app/site/node_modules/.pnpm/consola@3.2.3/node_modules/consola/dist/index.mjs';
+import { getContext } from 'file:///app/site/node_modules/.pnpm/unctx@2.3.1_webpack-sources@3.2.3/node_modules/unctx/dist/index.mjs';
+import { captureRawStackTrace, parseRawStackTrace } from 'file:///app/site/node_modules/.pnpm/errx@0.1.0/node_modules/errx/dist/index.js';
+import { isVNode, version, unref } from 'file:///app/site/node_modules/.pnpm/vue@3.5.12_typescript@5.6.3/node_modules/vue/index.mjs';
+import { initializeApp } from 'file:///app/dashboard/node_modules/.pnpm/firebase@10.14.0/node_modules/firebase/app/dist/index.mjs';
+import { getAuth } from 'file:///app/dashboard/node_modules/.pnpm/firebase@10.14.0/node_modules/firebase/auth/dist/index.mjs';
+import { getStorage } from 'file:///app/dashboard/node_modules/.pnpm/firebase@10.14.0/node_modules/firebase/storage/dist/index.mjs';
+import { createServerHead as createServerHead$1, CapoPlugin } from 'file:///app/site/node_modules/.pnpm/unhead@1.11.10/node_modules/unhead/dist/index.mjs';
+import { defineHeadPlugin } from 'file:///app/site/node_modules/.pnpm/@unhead+shared@1.11.10/node_modules/@unhead/shared/dist/index.mjs';
 
 const r=Object.create(null),E=e=>globalThis.process?.env||globalThis._importMeta_.env||globalThis.Deno?.env.toObject()||globalThis.__env__||(e?r:globalThis),s=new Proxy(r,{get(e,o){return E()[o]??r[o]},has(e,o){const i=E();return o in i||o in r},set(e,o,i){const g=E(!0);return g[o]=i,!0},deleteProperty(e,o){if(!o)return !1;const i=E(!0);return delete i[o],!0},ownKeys(){const e=E(!0);return Object.keys(e)}}),t=typeof process<"u"&&process.env&&"development"||"",p=[["APPVEYOR"],["AWS_AMPLIFY","AWS_APP_ID",{ci:!0}],["AZURE_PIPELINES","SYSTEM_TEAMFOUNDATIONCOLLECTIONURI"],["AZURE_STATIC","INPUT_AZURE_STATIC_WEB_APPS_API_TOKEN"],["APPCIRCLE","AC_APPCIRCLE"],["BAMBOO","bamboo_planKey"],["BITBUCKET","BITBUCKET_COMMIT"],["BITRISE","BITRISE_IO"],["BUDDY","BUDDY_WORKSPACE_ID"],["BUILDKITE"],["CIRCLE","CIRCLECI"],["CIRRUS","CIRRUS_CI"],["CLOUDFLARE_PAGES","CF_PAGES",{ci:!0}],["CODEBUILD","CODEBUILD_BUILD_ARN"],["CODEFRESH","CF_BUILD_ID"],["DRONE"],["DRONE","DRONE_BUILD_EVENT"],["DSARI"],["GITHUB_ACTIONS"],["GITLAB","GITLAB_CI"],["GITLAB","CI_MERGE_REQUEST_ID"],["GOCD","GO_PIPELINE_LABEL"],["LAYERCI"],["HUDSON","HUDSON_URL"],["JENKINS","JENKINS_URL"],["MAGNUM"],["NETLIFY"],["NETLIFY","NETLIFY_LOCAL",{ci:!1}],["NEVERCODE"],["RENDER"],["SAIL","SAILCI"],["SEMAPHORE"],["SCREWDRIVER"],["SHIPPABLE"],["SOLANO","TDDIUM"],["STRIDER"],["TEAMCITY","TEAMCITY_VERSION"],["TRAVIS"],["VERCEL","NOW_BUILDER"],["VERCEL","VERCEL",{ci:!1}],["VERCEL","VERCEL_ENV",{ci:!1}],["APPCENTER","APPCENTER_BUILD_ID"],["CODESANDBOX","CODESANDBOX_SSE",{ci:!1}],["STACKBLITZ"],["STORMKIT"],["CLEAVR"],["ZEABUR"],["CODESPHERE","CODESPHERE_APP_ID",{ci:!0}],["RAILWAY","RAILWAY_PROJECT_ID"],["RAILWAY","RAILWAY_SERVICE_ID"]];function B(){if(globalThis.process?.env)for(const e of p){const o=e[1]||e[0];if(globalThis.process?.env[o])return {name:e[0].toLowerCase(),...e[2]}}return globalThis.process?.env?.SHELL==="/bin/jsh"&&globalThis.process?.versions?.webcontainer?{name:"stackblitz",ci:!1}:{name:"",ci:!1}}const l=B(),d=l.name;function n(e){return e?e!=="false":!1}const I=globalThis.process?.platform||"",T=n(s.CI)||l.ci!==!1,R=n(globalThis.process?.stdout&&globalThis.process?.stdout.isTTY);n(s.DEBUG);const C=t==="test"||n(s.TEST);n(s.MINIMAL)||T||C||!R;const a=/^win/i.test(I);!n(s.NO_COLOR)&&(n(s.FORCE_COLOR)||(R||a)&&s.TERM!=="dumb"||T);const _=(globalThis.process?.versions?.node||"").replace(/^v/,"")||null;Number(_?.split(".")[0])||null;const W=globalThis.process||Object.create(null),c={versions:{}};new Proxy(W,{get(e,o){if(o==="env")return s;if(o in e)return e[o];if(o in c)return c[o]}});const A=globalThis.process?.release?.name==="node",L=!!globalThis.Bun||!!globalThis.process?.versions?.bun,D=!!globalThis.Deno,O=!!globalThis.fastly,S=!!globalThis.Netlify,N=!!globalThis.EdgeRuntime,u=globalThis.navigator?.userAgent==="Cloudflare-Workers",b=!!globalThis.__lagon__,F=[[S,"netlify"],[N,"edge-light"],[u,"workerd"],[O,"fastly"],[D,"deno"],[L,"bun"],[A,"node"],[b,"lagon"]];function G(){const e=F.find(o=>o[0]);if(e)return {name:e[1]}}const P=G();P?.name||"";
 
@@ -195,7 +195,7 @@ new Proxy(/* @__PURE__ */ Object.create(null), {
   }
 });
 
-const serverAssets = [{"baseName":"server","dir":"/home/cody/git/veloris-site-template/server/assets"}];
+const serverAssets = [{"baseName":"server","dir":"/app/site/server/assets"}];
 
 const assets = createStorage();
 
@@ -207,11 +207,11 @@ const storage = createStorage({});
 
 storage.mount('/assets', assets);
 
-storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/home/cody/git/veloris-site-template","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/home/cody/git/veloris-site-template/server","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/home/cody/git/veloris-site-template/.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/home/cody/git/veloris-site-template/.nuxt/cache","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"/home/cody/git/veloris-site-template/.data/kv","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/app/site","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/app/site/server","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/app/site/.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/app/site/.nuxt/cache","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"/app/site/.data/kv","ignore":["**/node_modules/**","**/.git/**"]}));
 
 function useStorage(base = "") {
   return base ? prefixStorage(storage, base) : storage;
@@ -661,13 +661,13 @@ if (!window.__NUXT_DEVTOOLS_TIME_METRIC__) {
 window.__NUXT_DEVTOOLS_TIME_METRIC__.appInit = Date.now()
 `;
 
-const _ttFxSTD031 = (function(nitro) {
+const _ZEHZXRmqhM = (function(nitro) {
   nitro.hooks.hook("render:html", (htmlContext) => {
     htmlContext.head.push(`<script>${script}<\/script>`);
   });
 });
 
-const rootDir = "/home/cody/git/veloris-site-template";
+const rootDir = "/app/site";
 
 const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[]};
 
@@ -686,7 +686,7 @@ const devReducers = {
   URL: (data) => data instanceof URL ? data.toString() : void 0
 };
 const asyncContext = getContext("nuxt-dev", { asyncContext: true, AsyncLocalStorage });
-const _K5pH5XehdO = (nitroApp) => {
+const _m9TZZt1JSW = (nitroApp) => {
   const handler = nitroApp.h3App.handler;
   nitroApp.h3App.handler = (event) => {
     return asyncContext.callAsync({ logs: [], event }, () => handler(event));
@@ -827,7 +827,7 @@ function defineRenderHandler(handler) {
   });
 }
 
-const _dpfhxShIjp = defineNitroPlugin(async (nitroApp) => {
+const _9OsEmrLA18 = defineNitroPlugin(async (nitroApp) => {
   const config = useRuntimeConfig();
   const firebaseConfig = {
     apiKey: config.public.FIREBASE_API_KEY,
@@ -872,9 +872,9 @@ const _dpfhxShIjp = defineNitroPlugin(async (nitroApp) => {
 });
 
 const plugins = [
-  _ttFxSTD031,
-_K5pH5XehdO,
-_dpfhxShIjp
+  _ZEHZXRmqhM,
+_m9TZZt1JSW,
+_9OsEmrLA18
 ];
 
 const errorHandler = (async function errorhandler(error, event) {
@@ -937,94 +937,94 @@ const errorHandler = (async function errorhandler(error, event) {
   return send(event, html);
 });
 
-const _lazy_ls95NO = () => Promise.resolve().then(function () { return analytics_post$1; });
-const _lazy_pHNFkM = () => Promise.resolve().then(function () { return _id__delete$3; });
-const _lazy_XelycO = () => Promise.resolve().then(function () { return index_get$9; });
-const _lazy_ar33ak = () => Promise.resolve().then(function () { return index_post$d; });
-const _lazy_zvZN36 = () => Promise.resolve().then(function () { return status_put$3; });
-const _lazy_pKJubl = () => Promise.resolve().then(function () { return documents_post$1; });
-const _lazy_1QeC3h = () => Promise.resolve().then(function () { return message_post$1; });
-const _lazy_RkCZBm = () => Promise.resolve().then(function () { return _id__get$1; });
-const _lazy_Lv2pTL = () => Promise.resolve().then(function () { return index_post$b; });
-const _lazy_VRSINA = () => Promise.resolve().then(function () { return index_get$7; });
-const _lazy_iiRnyg = () => Promise.resolve().then(function () { return index_post$9; });
-const _lazy_CeXODP = () => Promise.resolve().then(function () { return read_put$1; });
-const _lazy_FedzLG = () => Promise.resolve().then(function () { return _orderId__delete$1; });
-const _lazy_vtXg3D = () => Promise.resolve().then(function () { return index_post$7; });
-const _lazy_C4T1sE = () => Promise.resolve().then(function () { return resolveOrder_put$1; });
-const _lazy_OC43hT = () => Promise.resolve().then(function () { return index_get$5; });
-const _lazy_Z33rJ4 = () => import('file:///home/cody/git/veloris-dashboard/server/api/orders/index.post.js');
-const _lazy_RHhGz7 = () => import('file:///home/cody/git/veloris-dashboard/server/api/orders/index.put.js');
-const _lazy_DMWt24 = () => Promise.resolve().then(function () { return _id__delete$1; });
-const _lazy_YUAfXg = () => Promise.resolve().then(function () { return ids_get$1; });
-const _lazy_Lpr3i8 = () => Promise.resolve().then(function () { return index_get$3; });
-const _lazy_BpGlMF = () => Promise.resolve().then(function () { return index_post$5; });
-const _lazy_ETZE5H = () => Promise.resolve().then(function () { return index_put$1; });
-const _lazy_GhC6Wz = () => Promise.resolve().then(function () { return status_put$1; });
-const _lazy_eZKxc9 = () => Promise.resolve().then(function () { return realtimeAnalytics_post$1; });
-const _lazy_7k1Cgi = () => import('file:///home/cody/git/veloris-dashboard/server/api/store/%5BitemId%5D.delete.js');
-const _lazy_0xZg4B = () => Promise.resolve().then(function () { return _category__get$1; });
-const _lazy_WbsKRy = () => import('file:///home/cody/git/veloris-dashboard/server/api/store/categories/%5Bcategory%5D.post.js');
-const _lazy_pLJQs2 = () => import('file:///home/cody/git/veloris-dashboard/server/api/store/categories/%5Bcategory%5D/products/%5Bid%5D.get.js');
-const _lazy_RnAa7g = () => import('file:///home/cody/git/veloris-dashboard/server/api/store/categories/%5Bcategory%5D/products/index.post.js');
-const _lazy_JBpQ1N = () => import('file:///home/cody/git/veloris-dashboard/server/api/store/categories/%5Bcategory%5D/products/index.put.js');
-const _lazy_4C1VL9 = () => import('file:///home/cody/git/veloris-dashboard/server/api/store/categories/%5Bcategory%5D/products/update/%5Bid%5D.put.js');
-const _lazy_yhw6HX = () => import('file:///home/cody/git/veloris-dashboard/server/api/store/index.get.js');
-const _lazy_GqHgaN = () => import('file:///home/cody/git/veloris-dashboard/server/api/store/index.put.js');
-const _lazy_ZWIosR = () => Promise.resolve().then(function () { return index_post$3; });
-const _lazy_Hqb5k0 = () => Promise.resolve().then(function () { return webhook_post$1; });
-const _lazy_RBsrrS = () => Promise.resolve().then(function () { return access_get$1; });
-const _lazy_PZUUtO = () => Promise.resolve().then(function () { return index_delete$1; });
-const _lazy_SrZz99 = () => Promise.resolve().then(function () { return index_get$1; });
-const _lazy_YipZNb = () => Promise.resolve().then(function () { return index_post$1; });
-const _lazy_2LlX5i = () => Promise.resolve().then(function () { return role_put$1; });
-const _lazy_Xfjy2w = () => Promise.resolve().then(function () { return renderer$1; });
+const _lazy_NxNy0j = () => Promise.resolve().then(function () { return analytics_post$1; });
+const _lazy_De2xyi = () => Promise.resolve().then(function () { return _id__delete$3; });
+const _lazy_MXTA2r = () => Promise.resolve().then(function () { return index_get$9; });
+const _lazy_iUCZ4j = () => Promise.resolve().then(function () { return index_post$d; });
+const _lazy_w2nmbp = () => Promise.resolve().then(function () { return status_put$3; });
+const _lazy_wykwNa = () => Promise.resolve().then(function () { return documents_post$1; });
+const _lazy_UNpX0F = () => Promise.resolve().then(function () { return message_post$1; });
+const _lazy_amiMBq = () => Promise.resolve().then(function () { return _id__get$1; });
+const _lazy_BpKRJA = () => Promise.resolve().then(function () { return index_post$b; });
+const _lazy_5hNtIW = () => Promise.resolve().then(function () { return index_get$7; });
+const _lazy_aSqkwF = () => Promise.resolve().then(function () { return index_post$9; });
+const _lazy_olKlhe = () => Promise.resolve().then(function () { return read_put$1; });
+const _lazy_KWMEmZ = () => Promise.resolve().then(function () { return _orderId__delete$1; });
+const _lazy_mU0Xcq = () => Promise.resolve().then(function () { return index_post$7; });
+const _lazy_DkMzOL = () => Promise.resolve().then(function () { return resolveOrder_put$1; });
+const _lazy_A00C9D = () => Promise.resolve().then(function () { return index_get$5; });
+const _lazy_CXyXb4 = () => import('file:///app/dashboard/server/api/orders/index.post.js');
+const _lazy_yohW8h = () => import('file:///app/dashboard/server/api/orders/index.put.js');
+const _lazy_FMCj2x = () => Promise.resolve().then(function () { return _id__delete$1; });
+const _lazy_lxxxnB = () => Promise.resolve().then(function () { return ids_get$1; });
+const _lazy_Csw2Sc = () => Promise.resolve().then(function () { return index_get$3; });
+const _lazy_Bkvq3e = () => Promise.resolve().then(function () { return index_post$5; });
+const _lazy_Hpdz4P = () => Promise.resolve().then(function () { return index_put$1; });
+const _lazy_NyOyjU = () => Promise.resolve().then(function () { return status_put$1; });
+const _lazy_Habgm2 = () => Promise.resolve().then(function () { return realtimeAnalytics_post$1; });
+const _lazy_9Nl6aW = () => import('file:///app/dashboard/server/api/store/%5BitemId%5D.delete.js');
+const _lazy_isyPWQ = () => Promise.resolve().then(function () { return _category__get$1; });
+const _lazy_5PRYad = () => import('file:///app/dashboard/server/api/store/categories/%5Bcategory%5D.post.js');
+const _lazy_gScKBy = () => import('file:///app/dashboard/server/api/store/categories/%5Bcategory%5D/products/%5Bid%5D.get.js');
+const _lazy_oqOzJT = () => import('file:///app/dashboard/server/api/store/categories/%5Bcategory%5D/products/index.post.js');
+const _lazy_w7LKha = () => import('file:///app/dashboard/server/api/store/categories/%5Bcategory%5D/products/index.put.js');
+const _lazy_lYF8iz = () => import('file:///app/dashboard/server/api/store/categories/%5Bcategory%5D/products/update/%5Bid%5D.put.js');
+const _lazy_g3t0Yw = () => import('file:///app/dashboard/server/api/store/index.get.js');
+const _lazy_Ud12a4 = () => import('file:///app/dashboard/server/api/store/index.put.js');
+const _lazy_gx3t76 = () => Promise.resolve().then(function () { return index_post$3; });
+const _lazy_p2XNmH = () => Promise.resolve().then(function () { return webhook_post$1; });
+const _lazy_wH7Ddz = () => Promise.resolve().then(function () { return access_get$1; });
+const _lazy_vhw7Mk = () => Promise.resolve().then(function () { return index_delete$1; });
+const _lazy_JfUw8w = () => Promise.resolve().then(function () { return index_get$1; });
+const _lazy_W8Llai = () => Promise.resolve().then(function () { return index_post$1; });
+const _lazy_kzuOnj = () => Promise.resolve().then(function () { return role_put$1; });
+const _lazy_aR4IWV = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
-  { route: '/api/analytics', handler: _lazy_ls95NO, lazy: true, middleware: false, method: "post" },
-  { route: '/api/blogs/:id', handler: _lazy_pHNFkM, lazy: true, middleware: false, method: "delete" },
-  { route: '/api/blogs', handler: _lazy_XelycO, lazy: true, middleware: false, method: "get" },
-  { route: '/api/blogs', handler: _lazy_ar33ak, lazy: true, middleware: false, method: "post" },
-  { route: '/api/blogs/status', handler: _lazy_zvZN36, lazy: true, middleware: false, method: "put" },
-  { route: '/api/chatrooms/documents', handler: _lazy_pKJubl, lazy: true, middleware: false, method: "post" },
-  { route: '/api/chatrooms/message', handler: _lazy_1QeC3h, lazy: true, middleware: false, method: "post" },
-  { route: '/api/chatrooms/messages/:id', handler: _lazy_RkCZBm, lazy: true, middleware: false, method: "get" },
-  { route: '/api/galleries', handler: _lazy_Lv2pTL, lazy: true, middleware: false, method: "post" },
-  { route: '/api/notifications', handler: _lazy_VRSINA, lazy: true, middleware: false, method: "get" },
-  { route: '/api/notifications', handler: _lazy_iiRnyg, lazy: true, middleware: false, method: "post" },
-  { route: '/api/notifications/read', handler: _lazy_CeXODP, lazy: true, middleware: false, method: "put" },
-  { route: '/api/orders/incomplete/:orderId', handler: _lazy_FedzLG, lazy: true, middleware: false, method: "delete" },
-  { route: '/api/orders/incomplete', handler: _lazy_vtXg3D, lazy: true, middleware: false, method: "post" },
-  { route: '/api/orders/incomplete/resolve-order', handler: _lazy_C4T1sE, lazy: true, middleware: false, method: "put" },
-  { route: '/api/orders', handler: _lazy_OC43hT, lazy: true, middleware: false, method: "get" },
-  { route: '/api/orders', handler: _lazy_Z33rJ4, lazy: true, middleware: false, method: "post" },
-  { route: '/api/orders', handler: _lazy_RHhGz7, lazy: true, middleware: false, method: "put" },
-  { route: '/api/projects/:id', handler: _lazy_DMWt24, lazy: true, middleware: false, method: "delete" },
-  { route: '/api/projects/ids', handler: _lazy_YUAfXg, lazy: true, middleware: false, method: "get" },
-  { route: '/api/projects', handler: _lazy_Lpr3i8, lazy: true, middleware: false, method: "get" },
-  { route: '/api/projects', handler: _lazy_BpGlMF, lazy: true, middleware: false, method: "post" },
-  { route: '/api/projects', handler: _lazy_ETZE5H, lazy: true, middleware: false, method: "put" },
-  { route: '/api/projects/status', handler: _lazy_GhC6Wz, lazy: true, middleware: false, method: "put" },
-  { route: '/api/realtimeAnalytics', handler: _lazy_eZKxc9, lazy: true, middleware: false, method: "post" },
-  { route: '/api/store/:itemId', handler: _lazy_7k1Cgi, lazy: true, middleware: false, method: "delete" },
-  { route: '/api/store/categories/:category', handler: _lazy_0xZg4B, lazy: true, middleware: false, method: "get" },
-  { route: '/api/store/categories/:category', handler: _lazy_WbsKRy, lazy: true, middleware: false, method: "post" },
-  { route: '/api/store/categories/:category/products/:id', handler: _lazy_pLJQs2, lazy: true, middleware: false, method: "get" },
-  { route: '/api/store/categories/:category/products', handler: _lazy_RnAa7g, lazy: true, middleware: false, method: "post" },
-  { route: '/api/store/categories/:category/products', handler: _lazy_JBpQ1N, lazy: true, middleware: false, method: "put" },
-  { route: '/api/store/categories/:category/products/update/:id', handler: _lazy_4C1VL9, lazy: true, middleware: false, method: "put" },
-  { route: '/api/store', handler: _lazy_yhw6HX, lazy: true, middleware: false, method: "get" },
-  { route: '/api/store', handler: _lazy_GqHgaN, lazy: true, middleware: false, method: "put" },
-  { route: '/api/stripe', handler: _lazy_ZWIosR, lazy: true, middleware: false, method: "post" },
-  { route: '/api/stripe/webhook', handler: _lazy_Hqb5k0, lazy: true, middleware: false, method: "post" },
-  { route: '/api/users/access', handler: _lazy_RBsrrS, lazy: true, middleware: false, method: "get" },
-  { route: '/api/users', handler: _lazy_PZUUtO, lazy: true, middleware: false, method: "delete" },
-  { route: '/api/users', handler: _lazy_SrZz99, lazy: true, middleware: false, method: "get" },
-  { route: '/api/users', handler: _lazy_YipZNb, lazy: true, middleware: false, method: "post" },
-  { route: '/api/users/role', handler: _lazy_2LlX5i, lazy: true, middleware: false, method: "put" },
-  { route: '/__nuxt_error', handler: _lazy_Xfjy2w, lazy: true, middleware: false, method: undefined },
-  { route: '/_fonts/**', handler: _lazy_Xfjy2w, lazy: true, middleware: false, method: undefined },
-  { route: '/**', handler: _lazy_Xfjy2w, lazy: true, middleware: false, method: undefined }
+  { route: '/api/analytics', handler: _lazy_NxNy0j, lazy: true, middleware: false, method: "post" },
+  { route: '/api/blogs/:id', handler: _lazy_De2xyi, lazy: true, middleware: false, method: "delete" },
+  { route: '/api/blogs', handler: _lazy_MXTA2r, lazy: true, middleware: false, method: "get" },
+  { route: '/api/blogs', handler: _lazy_iUCZ4j, lazy: true, middleware: false, method: "post" },
+  { route: '/api/blogs/status', handler: _lazy_w2nmbp, lazy: true, middleware: false, method: "put" },
+  { route: '/api/chatrooms/documents', handler: _lazy_wykwNa, lazy: true, middleware: false, method: "post" },
+  { route: '/api/chatrooms/message', handler: _lazy_UNpX0F, lazy: true, middleware: false, method: "post" },
+  { route: '/api/chatrooms/messages/:id', handler: _lazy_amiMBq, lazy: true, middleware: false, method: "get" },
+  { route: '/api/galleries', handler: _lazy_BpKRJA, lazy: true, middleware: false, method: "post" },
+  { route: '/api/notifications', handler: _lazy_5hNtIW, lazy: true, middleware: false, method: "get" },
+  { route: '/api/notifications', handler: _lazy_aSqkwF, lazy: true, middleware: false, method: "post" },
+  { route: '/api/notifications/read', handler: _lazy_olKlhe, lazy: true, middleware: false, method: "put" },
+  { route: '/api/orders/incomplete/:orderId', handler: _lazy_KWMEmZ, lazy: true, middleware: false, method: "delete" },
+  { route: '/api/orders/incomplete', handler: _lazy_mU0Xcq, lazy: true, middleware: false, method: "post" },
+  { route: '/api/orders/incomplete/resolve-order', handler: _lazy_DkMzOL, lazy: true, middleware: false, method: "put" },
+  { route: '/api/orders', handler: _lazy_A00C9D, lazy: true, middleware: false, method: "get" },
+  { route: '/api/orders', handler: _lazy_CXyXb4, lazy: true, middleware: false, method: "post" },
+  { route: '/api/orders', handler: _lazy_yohW8h, lazy: true, middleware: false, method: "put" },
+  { route: '/api/projects/:id', handler: _lazy_FMCj2x, lazy: true, middleware: false, method: "delete" },
+  { route: '/api/projects/ids', handler: _lazy_lxxxnB, lazy: true, middleware: false, method: "get" },
+  { route: '/api/projects', handler: _lazy_Csw2Sc, lazy: true, middleware: false, method: "get" },
+  { route: '/api/projects', handler: _lazy_Bkvq3e, lazy: true, middleware: false, method: "post" },
+  { route: '/api/projects', handler: _lazy_Hpdz4P, lazy: true, middleware: false, method: "put" },
+  { route: '/api/projects/status', handler: _lazy_NyOyjU, lazy: true, middleware: false, method: "put" },
+  { route: '/api/realtimeAnalytics', handler: _lazy_Habgm2, lazy: true, middleware: false, method: "post" },
+  { route: '/api/store/:itemId', handler: _lazy_9Nl6aW, lazy: true, middleware: false, method: "delete" },
+  { route: '/api/store/categories/:category', handler: _lazy_isyPWQ, lazy: true, middleware: false, method: "get" },
+  { route: '/api/store/categories/:category', handler: _lazy_5PRYad, lazy: true, middleware: false, method: "post" },
+  { route: '/api/store/categories/:category/products/:id', handler: _lazy_gScKBy, lazy: true, middleware: false, method: "get" },
+  { route: '/api/store/categories/:category/products', handler: _lazy_oqOzJT, lazy: true, middleware: false, method: "post" },
+  { route: '/api/store/categories/:category/products', handler: _lazy_w7LKha, lazy: true, middleware: false, method: "put" },
+  { route: '/api/store/categories/:category/products/update/:id', handler: _lazy_lYF8iz, lazy: true, middleware: false, method: "put" },
+  { route: '/api/store', handler: _lazy_g3t0Yw, lazy: true, middleware: false, method: "get" },
+  { route: '/api/store', handler: _lazy_Ud12a4, lazy: true, middleware: false, method: "put" },
+  { route: '/api/stripe', handler: _lazy_gx3t76, lazy: true, middleware: false, method: "post" },
+  { route: '/api/stripe/webhook', handler: _lazy_p2XNmH, lazy: true, middleware: false, method: "post" },
+  { route: '/api/users/access', handler: _lazy_wH7Ddz, lazy: true, middleware: false, method: "get" },
+  { route: '/api/users', handler: _lazy_vhw7Mk, lazy: true, middleware: false, method: "delete" },
+  { route: '/api/users', handler: _lazy_JfUw8w, lazy: true, middleware: false, method: "get" },
+  { route: '/api/users', handler: _lazy_W8Llai, lazy: true, middleware: false, method: "post" },
+  { route: '/api/users/role', handler: _lazy_kzuOnj, lazy: true, middleware: false, method: "put" },
+  { route: '/__nuxt_error', handler: _lazy_aR4IWV, lazy: true, middleware: false, method: undefined },
+  { route: '/_fonts/**', handler: _lazy_aR4IWV, lazy: true, middleware: false, method: undefined },
+  { route: '/**', handler: _lazy_aR4IWV, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {
@@ -2129,8 +2129,8 @@ function publicAssetsURL(...path) {
 
 globalThis.__buildAssetsURL = buildAssetsURL;
 globalThis.__publicAssetsURL = publicAssetsURL;
-const getClientManifest = () => import('file:///home/cody/git/veloris-site-template/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
-const getServerEntry = () => import('file:///home/cody/git/veloris-site-template/.nuxt/dist/server/server.mjs').then((r) => r.default || r);
+const getClientManifest = () => import('file:///app/site/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
+const getServerEntry = () => import('file:///app/site/.nuxt/dist/server/server.mjs').then((r) => r.default || r);
 const getSSRStyles = lazyCachedFunction(() => Promise.resolve().then(function () { return styles$1; }).then((r) => r.default || r));
 const getSSRRenderer = lazyCachedFunction(async () => {
   const manifest = await getClientManifest();
